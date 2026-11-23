@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>AURELIA ROAST — Haute Caféterie | Private Single-Origin Reserve</title>
+  
+  <meta name="description" content="AURELIA ROAST — An ultra-luxury scrollytelling experience of royal specialty coffee extraction. Single-Origin Reserve Ethiopia Yirgacheffe, extracted at 9 bars of precision.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Google Fonts: Cinzel, Playfair Display, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+  <!-- =========================================================================
+       1. LUXURY PITCH-BLACK PRELOADER SCREEN
+       ========================================================================= -->
+  <aside id="preloader" class="preloader" aria-label="Loading Aurelia Roast Reserve Experience">
+    <div class="preloader-backdrop"></div>
+    <div class="preloader-content">
+      
+      <!-- Royal Crown / Monogram SVG -->
+      <div class="preloader-crest">
+        <svg viewBox="0 0 80 80" width="70" height="70" fill="none" xmlns="http://www.w3.org/2000/svg" class="crest-svg" aria-hidden="true">
+          <circle cx="40" cy="40" r="38" stroke="#D4AF37" stroke-width="1" stroke-dasharray="2 3" opacity="0.6"/>
+          <path d="M40 16L45 28L57 20L53 35H27L23 20L35 28L40 16Z" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round" fill="rgba(212, 175, 55, 0.12)"/>
+          <path d="M25 38H55V44C55 52.2843 48.2843 59 40 59C31.7157 59 25 52.2843 25 44V38Z" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round" fill="rgba(212, 175, 55, 0.08)"/>
+          <path d="M40 44V53M35 48.5H45" stroke="#D4AF37" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="40" cy="14" r="2" fill="#D4AF37"/>
+          <circle cx="21" cy="18" r="1.5" fill="#D4AF37"/>
+          <circle cx="59" cy="18" r="1.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <div class="preloader-title-group">
+        <h2 class="preloader-brand">AURELIA ROAST</h2>
+        <p class="preloader-subtitle">HAUTE CAFÉTERIE • PRIVATE SELECTION</p>
+      </div>
+
+      <!-- 24k Gold Progress Bar & Counter -->
+      <div class="preloader-meter-container">
+        <div class="preloader-bar-track">
+          <div id="preloader-bar-fill" class="preloader-bar-fill" style="width: 0%;"></div>
+        </div>
+        <div class="preloader-meta">
+          <span id="preloader-status" class="preloader-status">CALIBRATING 240 ROYAL FRAMES...</span>
+          <span id="preloader-percentage" class="preloader-percentage">0%</span>
+        </div>
+      </div>
+
+      <div class="preloader-footnote">
+        <span>BATCH LOT NO. 841</span>
+        <span class="dot-separator">•</span>
+        <span>9 BARS OF PRECISION</span>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       2. MINIMAL TOP NAVIGATION
+       ========================================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="#" class="brand-link" aria-label="Aurelia Roast Home">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D4AF37" stroke-width="1.5" class="brand-crest-mini" aria-hidden="true">
+          <path d="M12 3L14 8L19 5L17.5 12H6.5L5 5L10 8L12 3Z" stroke-linejoin="round" fill="rgba(212, 175, 55, 0.2)"/>
+          <path d="M6 13H18V16C18 19.3137 15.3137 22 12 22C8.68629 22 6 19.3137 6 16V13Z" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-wordmark">AURELIA ROAST</span>
+      </a>
+      <span class="brand-origin-badge">YIRGACHEFFE LOT #841</span>
+    </div>
+
+    <!-- Chapter Breadcrumbs -->
+    <nav class="nav-chapters" aria-label="Experience Chapters">
+      <div class="chapter-dot active" data-beat="1">
+        <span class="dot-glow"></span>
+        <span class="chapter-label">I. THE PORTAFILTER</span>
+      </div>
+      <div class="chapter-dot" data-beat="2">
+        <span class="dot-glow"></span>
+        <span class="chapter-label">II. LAMINAR DESCENT</span>
+      </div>
+      <div class="chapter-dot" data-beat="3">
+        <span class="dot-glow"></span>
+        <span class="chapter-label">III. SENSORY IMMERSION</span>
+      </div>
+      <div class="chapter-dot" data-beat="4">
+        <span class="dot-glow"></span>
+        <span class="chapter-label">IV. THE IMPERIAL CUP</span>
+      </div>
+    </nav>
+
+    <div class="nav-right">
+      <!-- Audio Atmosphere Toggle -->
+      <button id="audio-toggle" class="audio-toggle" aria-label="Toggle ambient sensory sound" title="Ambient Caféterie Soundscape">
+        <span class="audio-bars" aria-hidden="true">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </span>
+        <span class="audio-text">SOUND</span>
+      </button>
+
+      <!-- Reserve Button -->
+      <button class="btn-reserve-nav" id="btn-open-reserve" aria-label="Open allocation reservation drawer">
+        <span class="btn-text">RESERVE</span>
+        <span class="btn-gold-shine"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. 600VH SCROLL STAGE & STICKY CANVAS ENGINE
+       ========================================================================= -->
+  <main id="scroll-container" class="scroll-container">
+    
+    <div id="sticky-stage" class="sticky-stage">
+      
+      <!-- Sticky 100vw x 100vh Canvas -->
+      <canvas id="hero-canvas" class="hero-canvas" aria-label="Cinematic 3D coffee extraction sequence"></canvas>
+      
+      <!-- Cinematic Vignette & Ambient Radial Grain -->
+      <div class="cinematic-vignette" aria-hidden="true"></div>
+
+      <!-- Live Frame Counter & Extraction HUD (Top-right corner indicator) -->
+      <div class="extraction-hud" aria-hidden="true">
+        <div class="hud-item">
+          <span class="hud-label">PRESSURE</span>
+          <span class="hud-value" id="hud-pressure">9.2 BAR</span>
+        </div>
+        <div class="hud-divider"></div>
+        <div class="hud-item">
+          <span class="hud-label">TEMP</span>
+          <span class="hud-value" id="hud-temp">93.4°C</span>
+        </div>
+        <div class="hud-divider"></div>
+        <div class="hud-item">
+          <span class="hud-label">EXTRACTION</span>
+          <span class="hud-value" id="hud-frame">001 / 240</span>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           CHOREOGRAPHED STORYTELLING BEATS
+           ===================================================================== -->
+      <div class="story-overlay" id="story-overlay">
+
+        <!-- -----------------------------------------------------------------
+             BEAT 1 — 0% to 20% Scroll (The Portafilter Hero)
+             ----------------------------------------------------------------- -->
+        <section class="story-beat beat-1" id="beat-1" aria-label="The Portafilter Hero">
+          <div class="beat-inner beat-1-inner">
+            
+            <div class="hero-header-block">
+              <div class="luxury-badge">
+                <span class="badge-accent">EST. 1898</span>
+                <span class="badge-separator">•</span>
+                <span class="badge-text">PRIVATE COLLECTION</span>
+              </div>
+              
+              <h1 class="hero-headline">
+                LIQUID GOLD,<br>
+                <span class="gold-gradient-text">EXTRACTED.</span>
+              </h1>
+              
+              <p class="hero-subtitle">
+                Single-Origin Reserve <span class="gold-dot">•</span> 9 Bars of Precision
+              </p>
+
+              <div class="hero-specs-row">
+                <div class="spec-chip">
+                  <span class="chip-k">ORIGIN</span>
+                  <span class="chip-v">Yirgacheffe, 2,100m</span>
+                </div>
+                <div class="spec-chip">
+                  <span class="chip-k">ROAST LEVEL</span>
+                  <span class="chip-v">City Roast (Small Batch)</span>
+                </div>
+                <div class="spec-chip">
+                  <span class="chip-k">EXTRACTION</span>
+                  <span class="chip-v">1:2.1 Velvet Ratio</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-prompt" id="scroll-prompt">
+              <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+              </div>
+              <span class="scroll-caption">SCROLL TO WITNESS THE EXTRACTION</span>
+              <div class="scroll-gold-line"></div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- -----------------------------------------------------------------
+             BEAT 2 — 22% to 48% Scroll (The Descent & Laminar Flow)
+             ----------------------------------------------------------------- -->
+        <section class="story-beat beat-2" id="beat-2" aria-label="The Descent and Laminar Flow">
+          <div class="beat-inner beat-2-inner flanking-grid">
+            
+            <!-- Left Flanking Card (Thermal Lock) -->
+            <div class="flank-card flank-left glass-card" id="card-thermal">
+              <div class="card-glow"></div>
+              <div class="card-header">
+                <div class="card-icon-wrapper">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                    <circle cx="11.5" cy="17.5" r="2" fill="#D4AF37"/>
+                  </svg>
+                </div>
+                <div class="card-eyebrow">THERMODYNAMIC MASTERY</div>
+              </div>
+
+              <h2 class="card-title">93°C THERMAL LOCK</h2>
+              
+              <p class="card-body">
+                Micro-lot Ethiopian Heirloom beans roasted in small batches for zero bitterness. Sealed at uniform brew temperature to protect sweet floral esters.
+              </p>
+
+              <div class="card-footer-metrics">
+                <div class="metric-col">
+                  <span class="m-val">±0.08°C</span>
+                  <span class="m-lbl">PID STABILITY</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-col">
+                  <span class="m-val">CAST IRON</span>
+                  <span class="m-lbl">HEAT INERTIA</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Void Spacer: Intentionally clear for the falling espresso stream! -->
+            <div class="central-void-spacer" aria-hidden="true"></div>
+
+            <!-- Right Flanking Card (Laminar Flow) -->
+            <div class="flank-card flank-right glass-card" id="card-laminar">
+              <div class="card-glow"></div>
+              <div class="card-header">
+                <div class="card-icon-wrapper">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2v20M8 6c2 1 6 1 8 0M8 12c2 1 6 1 8 0M8 18c2 1 6 1 8 0"/>
+                  </svg>
+                </div>
+                <div class="card-eyebrow">HYDRODYNAMIC PERFECTION</div>
+              </div>
+
+              <h2 class="card-title">VELVET LAMINAR FLOW</h2>
+              
+              <p class="card-body">
+                Slow-extracted aromatics preserving delicate notes of dark cacao and toasted hazelnut. Unbroken fluid trajectory prevents cavitation and oxidation.
+              </p>
+
+              <div class="card-footer-metrics">
+                <div class="metric-col">
+                  <span class="m-val">1.82 mL/s</span>
+                  <span class="m-lbl">VELVET FLUX</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-col">
+                  <span class="m-val">ZERO MESH</span>
+                  <span class="m-lbl">MICRO-FINES LOCK</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- -----------------------------------------------------------------
+             BEAT 3 — 50% to 74% Scroll (Pure Sensory Immersion)
+             ----------------------------------------------------------------- -->
+        <section class="story-beat beat-3" id="beat-3" aria-label="Pure Sensory Immersion">
+          <div class="beat-inner beat-3-inner">
+            
+            <div class="sensory-pullquote-wrapper" id="sensory-quote-card">
+              <!-- Animated gold vertical hairline accent -->
+              <div class="gold-hairline-accent" aria-hidden="true">
+                <div class="hairline-pulse"></div>
+              </div>
+
+              <div class="sensory-quote-content">
+                <div class="editorial-chapter-tag">
+                  <span>CHAPTER III</span>
+                  <span class="dot-separator">•</span>
+                  <span>PURE EXTRACTION SILENCE</span>
+                </div>
+
+                <blockquote class="editorial-quote">
+                  “Patience in every drop.<br>
+                  <span class="italic-serif">Crafted for the connoisseur.</span>”
+                </blockquote>
+
+                <p class="sensory-narrative">
+                  Suspended in the dark expanse of absolute precision. No rushing, no turbulence — only the pristine vertical ribbon of estate-grown lipids and volatile aromatics descending through stillness.
+                </p>
+
+                <div class="sommelier-signoff">
+                  <div class="signoff-signature">Aurelia Master Roaster</div>
+                  <div class="signoff-role">GENEVA PRIVATE VAULT &bull; SELECTION PRIVÉE</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- -----------------------------------------------------------------
+             BEAT 4 — 76% to 100% Scroll (The Royal Cup & Final Conversion)
+             ----------------------------------------------------------------- -->
+        <section class="story-beat beat-4" id="beat-4" aria-label="The Imperial Cup and Reserve Allocation">
+          <div class="beat-inner beat-4-inner split-conversion-layout">
+            
+            <!-- Left Side: Imperial Espresso Card & Order CTA -->
+            <div class="conversion-col conversion-left glass-card" id="conversion-left-card">
+              <div class="card-glow"></div>
+              
+              <div class="product-badge-row">
+                <span class="crown-icon" aria-hidden="true">👑</span>
+                <span class="product-origin-tag">YIRGACHEFFE, 2,100M • ETHIOPIA</span>
+              </div>
+
+              <h2 class="imperial-title">THE IMPERIAL ESPRESSO</h2>
+              <p class="imperial-desc">
+                Cradled in smoked crystal and bordered in 24-karat gold. Rich, tiger-striped crema encapsulating unhurried excellence.
+              </p>
+
+              <!-- Tasting profile pills -->
+              <div class="tasting-section">
+                <div class="tasting-label">TASTING PROFILE</div>
+                <div class="tasting-pills">
+                  <span class="flavor-pill"><span class="pill-dot"></span>Dark Chocolate</span>
+                  <span class="flavor-pill"><span class="pill-dot"></span>Roasted Hazelnut</span>
+                  <span class="flavor-pill"><span class="pill-dot"></span>Bergamot</span>
+                  <span class="flavor-pill"><span class="pill-dot"></span>Meyer Lemon Zest</span>
+                </div>
+              </div>
+
+              <!-- Metallic Gold CTA Button -->
+              <div class="cta-action-area">
+                <button class="btn-royal-cta" id="btn-order-primary" aria-label="Order Private Reserve for $48">
+                  <span class="cta-shimmer"></span>
+                  <span class="cta-icon">✦</span>
+                  <span class="cta-label">ORDER PRIVATE RESERVE — $48</span>
+                </button>
+                <div class="cta-subnote">
+                  <span>Wax-Sealed Obsidian Tin</span>
+                  <span class="dot-separator">•</span>
+                  <span>Hand-Numbered 1 of 250</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Clean Minimalist Vertical Spec Metrics -->
+            <div class="conversion-col conversion-right" id="conversion-right-specs">
+              
+              <div class="metric-card glass-card">
+                <div class="metric-index">01</div>
+                <div class="metric-info">
+                  <div class="metric-headline">100% ARABICA</div>
+                  <div class="metric-detail">Ethiopian Heirloom Typica varietal, hand-picked at peak brix maturity.</div>
+                </div>
+              </div>
+
+              <div class="metric-card glass-card">
+                <div class="metric-index">02</div>
+                <div class="metric-info">
+                  <div class="metric-headline">SMALL BATCH #04</div>
+                  <div class="metric-detail">Only 250 tins cast and numbered per quarterly celestial harvest.</div>
+                </div>
+              </div>
+
+              <div class="metric-card glass-card">
+                <div class="metric-index">03</div>
+                <div class="metric-info">
+                  <div class="metric-headline">ROASTED TO ORDER</div>
+                  <div class="metric-detail">Dispatched within 24 hours of roasting via climate-stabilized express.</div>
+                </div>
+              </div>
+
+              <div class="metric-card glass-card">
+                <div class="metric-index">04</div>
+                <div class="metric-info">
+                  <div class="metric-headline">24K GOLD RIMMED</div>
+                  <div class="metric-detail">Fluted smoked-crystal vessel engineered to trap volatile crema gases.</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </div><!-- /.story-overlay -->
+
+    </div><!-- /#sticky-stage -->
+
+  </main><!-- /#scroll-container -->
+
+  <!-- =========================================================================
+       4. POST-SEQUENCE LUXURY BRAND FOOTER
+       ========================================================================= -->
+  <footer id="site-footer" class="site-footer">
+    
+    <!-- Top Gold Border Accent -->
+    <div class="footer-gold-accent-line">
+      <div class="accent-line-diamond"></div>
+    </div>
+
+    <div class="footer-container">
+      
+      <!-- Newsletter Section -->
+      <section class="footer-newsletter-section">
+        <div class="newsletter-header">
+          <div class="pre-title">BY PRIVATE INVITATION</div>
+          <h3 class="newsletter-title">Join the Private Roast List</h3>
+          <p class="newsletter-desc">
+            Receive discreet allocations of micro-lot Ethiopian and Geisha reserves before public release.
+          </p>
+        </div>
+
+        <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+          <div class="form-input-group">
+            <input type="email" id="newsletter-email" class="gold-input" placeholder="Enter your distinguished email address" required autocomplete="email">
+            <button type="submit" class="btn-newsletter-submit" id="btn-newsletter">
+              <span>REQUEST ALLOCATION</span>
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" class="arrow-icon" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </div>
+          <div class="newsletter-feedback" id="newsletter-feedback"></div>
+        </form>
+      </section>
+
+      <!-- Divider -->
+      <div class="footer-grid-divider"></div>
+
+      <!-- Navigation & Brand Columns -->
+      <div class="footer-columns-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-col brand-col">
+          <div class="footer-brand-title">AURELIA ROAST</div>
+          <div class="footer-crest-small">HAUTE CAFÉTERIE • EST. 1898</div>
+          <p class="footer-brand-bio">
+            An invitation-only micro-roastery catering to royal houses and distinguished palates across Geneva, London, Addis Ababa, and Tokyo.
+          </p>
+          <div class="roastery-credo">
+            <span>9 BARS OF EXTRACTION</span> • <span>CAST IRON INTEGRITY</span>
+          </div>
+        </div>
+
+        <!-- Column 1: The Reserve -->
+        <div class="footer-col">
+          <div class="footer-col-heading">THE RESERVES</div>
+          <ul class="footer-nav-list">
+            <li><a href="#scroll-container" class="footer-link">Imperial Espresso (Ethiopia)</a></li>
+            <li><a href="#scroll-container" class="footer-link">Panama Geisha Flora 2,300m</a></li>
+            <li><a href="#scroll-container" class="footer-link">Bourbon Cask Matured Cut</a></li>
+            <li><a href="#scroll-container" class="footer-link">Annual Celestial Allocation</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Science & Craft -->
+        <div class="footer-col">
+          <div class="footer-col-heading">CRAFT & PHILOSOPHY</div>
+          <ul class="footer-nav-list">
+            <li><a href="#beat-2" class="footer-link">Thermodynamics (93°C PID)</a></li>
+            <li><a href="#beat-2" class="footer-link">Velvet Laminar Hydrodynamics</a></li>
+            <li><a href="#beat-3" class="footer-link">Aromatics & Sensory Notes</a></li>
+            <li><a href="#beat-4" class="footer-link">Fluted Smoked Crystal Vessels</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Private Concierge -->
+        <div class="footer-col">
+          <div class="footer-col-heading">CONCIERGE VAULT</div>
+          <ul class="footer-nav-list">
+            <li><a href="#" class="footer-link concierge-trigger">Private Sommelier Consultation</a></li>
+            <li><a href="#" class="footer-link concierge-trigger">Corporate Vault Accounts</a></li>
+            <li><a href="#" class="footer-link concierge-trigger">Geneva Tasting Salon</a></li>
+            <li><a href="#" class="footer-link concierge-trigger">Track Private Courier</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 AURELIA ROAST HAUTE CAFÉTERIE. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-sub-links">
+          <a href="#">Privilege Terms</a>
+          <span class="dot-separator">•</span>
+          <a href="#">Privacy Charter</a>
+          <span class="dot-separator">•</span>
+          <a href="#">Courier Logistics</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       5. INTERACTIVE PRIVATE RESERVE ORDER DRAWER / MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+
+  <aside class="reserve-drawer" id="reserve-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-heading" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand-group">
+        <span class="drawer-pretitle">PRIVATE ROAST ALLOCATION</span>
+        <h2 id="drawer-heading" class="drawer-title">AURELIA IMPERIAL RESERVE</h2>
+      </div>
+      <button class="drawer-close" id="btn-close-drawer" aria-label="Close allocation window">&times;</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Product Showcase -->
+      <div class="drawer-product-card">
+        <div class="product-badge-gold">LOT #841 • NUMBERED EDITION</div>
+        <div class="product-title-sm">Ethiopian Heirloom Single-Origin</div>
+        <div class="product-pricing">
+          <span class="currency">$</span><span class="price-val" id="drawer-item-price">48</span>
+          <span class="unit-desc">/ 250g Wax-Sealed Obsidian Tin</span>
+        </div>
+        <div class="product-attributes">
+          <div class="attr-pill">Altitude: 2,100m</div>
+          <div class="attr-pill">Process: Sun-Dried Natural</div>
+          <div class="attr-pill">Roast: Batch #04</div>
+        </div>
+      </div>
+
+      <!-- Grind Selection -->
+      <div class="form-section">
+        <label class="section-label">SELECT GRIND SPECIFICATION</label>
+        <div class="grind-options-grid">
+          <label class="grind-option active">
+            <input type="radio" name="grind" value="Whole Bean" checked>
+            <span class="grind-box">
+              <span class="grind-name">Whole Bean</span>
+              <span class="grind-sub">Peak aromatic longevity</span>
+            </span>
+          </label>
+
+          <label class="grind-option">
+            <input type="radio" name="grind" value="Espresso 9-Bar">
+            <span class="grind-box">
+              <span class="grind-name">Espresso Grind</span>
+              <span class="grind-sub">Calibrated for 9.2 Bar</span>
+            </span>
+          </label>
+
+          <label class="grind-option">
+            <input type="radio" name="grind" value="Royal Filter">
+            <span class="grind-box">
+              <span class="grind-name">Royal Filter</span>
+              <span class="grind-sub">Chemex & crystal flutes</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Quantity Stepper -->
+      <div class="form-section">
+        <label class="section-label" for="qty-count">ALLOCATION QUANTITY (MAX 6 TINS PER PATRON)</label>
+        <div class="quantity-stepper">
+          <button type="button" class="btn-qty" id="qty-minus" aria-label="Decrease quantity">&minus;</button>
+          <span class="qty-display" id="qty-count">1</span>
+          <button type="button" class="btn-qty" id="qty-plus" aria-label="Increase quantity">&#43;</button>
+        </div>
+      </div>
+
+      <!-- Packaging Certification -->
+      <div class="wax-seal-guarantee">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#D4AF37" aria-hidden="true">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <div class="guarantee-text">
+          <strong>Certified Royal Seal:</strong> Every tin is stamped in 24k gold leaf and nitrogen-flushed within 120 seconds of roasting.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer">
+      <div class="total-row">
+        <span class="total-label">INVESTMENT TOTAL</span>
+        <span class="total-amount" id="drawer-total-price">$48.00</span>
+      </div>
+      <button class="btn-royal-checkout" id="btn-submit-order">
+        <span class="checkout-shimmer"></span>
+        <span class="checkout-label">COMMENCE ACQUISITION</span>
+      </button>
+      <div class="checkout-secure-note">
+        <span>ENCRYPTED CONCIERGE GATEWAY</span> • <span>EXPRESS COURIER INCLUDED</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       SCRIPTS: LENIS, GSAP, SCROLLTRIGGER & SCROLLYTELLING ENGINE
+       ========================================================================= -->
+  <!-- Local Vendor Scripts with CDN fallbacks -->
+  <script src="vendor/lenis.min.js"></script>
+  <script>
+    if (typeof Lenis === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+    if (typeof gsap === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script>
+    if (typeof ScrollTrigger === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
